@@ -1,11 +1,26 @@
-import reactImg from './assets/react-core-concepts.png';
-import componentImg from './assets/components.png';
+import { useState } from 'react';
+
 import { CORE_CONCEPTS } from "./data.js";
 import Header from './components/Header/Header.jsx';
 import CoreConcept from "./components/CoreConcept.jsx";
 import TabButton from "./components/TabButton";
 
 function App() {
+    const [ originalButton, changeButton ] = useState('Please click a button!');
+
+    // let tabContent = 'Please click a button';
+
+    function handleSelect(button) {
+        // selectedButton => 'components', 'jsx', 'props', 'state'
+
+        changeButton(button);
+        console.log('changeButton',changeButton);
+
+        // tabContent = selectedButton;
+        // console.log('탭 콘텐츠 클릭함',tabContent);
+    }
+    // console.log('앱 함수 실행');
+
     return (
         <div>
             <Header />
@@ -34,11 +49,16 @@ function App() {
                 <section id="examples">
                     <h2>Examples</h2>
                     <menu>
-                        <TabButton>Components</TabButton>
-                        <TabButton>JSX</TabButton>
-                        <TabButton>Props</TabButton>
-                        <TabButton>State</TabButton>
+                        <TabButton onSelect={() => handleSelect('components')}>
+                            Components</TabButton>
+                        <TabButton onSelect={() => handleSelect('jsx')}>
+                            JSX</TabButton>
+                        <TabButton onSelect={() => handleSelect('props')}>
+                            Props</TabButton>
+                        <TabButton onSelect={() => handleSelect('state')}>
+                            State</TabButton>
                     </menu>
+                    {originalButton}
                 </section>
             </main>
         </div>
