@@ -21,3 +21,13 @@ npm install
 npm run dev
 ```
 
+## Props
+- React allows you to pass data to components via a concept called *Props*
+- There is JSX code that uses a Component
+- Set component input data via "custom HTML attributes" (props)
+- Set Props
+- Defines internal logic + JSX code that should be rendered
+- Receive Props
+- prop parameters with configuration data
+
+
