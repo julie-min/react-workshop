@@ -29,5 +29,35 @@ npm run dev
 - Defines internal logic + JSX code that should be rendered
 - Receive Props
 - prop parameters with configuration data
+- Props란, 컴포넌트(틀) 간의 데이터를 전달하는 매커니즘임.
+- 함수의 파라미터처럼 작동한다.
+
+## By Default, Components execute only once
+- React compares the old output of component function to the new output
+- and applies any differences to the actual website UI.
+
+## State
+- State is one of Hook (Hook is tool)
+- Hook example: `useState`, `useEffect`, `useContext`
+- when State is changed, Component will be rendering.
+- State used to manage dynamic data.
+- It allows React components to remember values that change over time.
+- When the state changes, the component re-renders automatically to reflect the updated UI.
+- for functional components, the `useState` Hook is used to initialize and update state.
+
+## Rules of Hooks
+- Only call Hooks inside of Component Functions
+- Only call Hooks on the top level
+
+```
+const [ counter, setCounter ] = useState(0);
+
+counter : Current state value
+setCounter : State updating function
+0 : Initial state value (Stored by React)
+```
+
+
+
 
 
